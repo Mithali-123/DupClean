@@ -33,9 +33,9 @@
 ##❤️**Support**
 If these tools have made your life easier, there are three ways you can support the project:
 
-⭐ Star this Repo: It helps other developers find the project and tells me you like my work!
-📢 Share it: Tell a friend or colleague about ToolSuite. Word-of-mouth is the best way to grow.
-☕ Support the Dev: If you’ve found massive value in ToolSuite and want to help me cover developer costs, you can donate via the Support Page.
+- ⭐ Star this Repo: It helps other developers find the project and tells me you like my work!
+- 📢 Share it: Tell a friend or colleague about ToolSuite. Word-of-mouth is the best way to grow.
+- ☕ Support the Dev: If you’ve found massive value in ToolSuite and want to help me cover developer costs, you can donate via the Support Page.
 
 ---
 
