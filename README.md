@@ -24,8 +24,15 @@
 3. Double-click the file to launch. 
 4. Your default browser will automatically open the DupClean interface.
 
-## 🛠️ Support
-If you encounter any issues or have suggestions, please open an **Issue** on this GitHub repository.
+##❤️ Support the Project
+ToolSuite is a passion project built by a solo developer. If these tools have made your life easier, there are three ways you can support the project:
+
+⭐ Star this Repo: It helps other developers find the project and tells me you like my work!
+📢 Share it: Tell a friend or colleague about ToolSuite. Word-of-mouth is the best way to grow.
+☕ Support the Dev: If you’ve found massive value in ToolSuite and want to help me cover developer costs, you can donate via the Support Page.
+Important
+
+Donations are entirely optional. ToolSuite is free software and will remain free for everyone. Your support, in any form (even just a star!), is deeply appreciated!
 
 ## ✍️ Author
 **Mithali** *Cloud Enthusiast| Python Developer*
