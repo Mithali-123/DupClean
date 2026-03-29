@@ -1,27 +1,32 @@
-# DupClean 🚀
-**An Automated Duplicate File Finder & Cleanup Utility**
+# 🧹 DupClean: Intelligent Duplicate File Finder
 
-DupClean is a Flask-based desktop application designed to scan directories, identify duplicate files, and perform safe cleanups using `Send2Trash`.
+**DupClean** is a lightweight, high-performance desktop utility designed to reclaim your storage space by identifying and managing duplicate files with precision.
 
-## ✨ Features
-* **Smart Scanning:** Rapidly identifies duplicates in any user-defined path.
-* **Modern UI:** Clean, purple-themed interface for easy navigation.
-* **Safe Deletion:** Uses Recycle Bin integration instead of permanent deletion.
-* **CI/CD Integrated:** Automated build pipeline using Jenkins for Windows EXE generation.
+---
+
+## 🚀 Why Use DupClean?
+- **Reclaim Storage:** Quickly find hidden duplicates that are eating up your disk space.
+- **Safety First:** Preview files before taking any action.
+- **User-Friendly:** A clean, modern interface designed for both tech-savvy users and beginners.
+- **Standalone:** No complex installation required; just run the EXE and go.
 
 ## 🛠️ Tech Stack
-* **Language:** Python 3.12
-* **Framework:** Flask
-* **Automation:** Jenkins (CI/CD)
-* **Packaging:** PyInstaller
+- **Frontend:** HTML5, CSS3 (Modern Responsive UI)
+- **Backend:** Python (Flask Framework)
+- **Libraries:** - `Flask`: For the internal web server.
+  - `Send2Trash`: For safe file deletion (sends files to Recycle Bin instead of permanent deletion).
+  - `PyInstaller`: For compiling the project into a standalone Windows Executable.
+- **CI/CD:** Jenkins (Automated Build Pipeline)
 
-## 🚀 How to Run
-1. Download the latest `app.exe` from the [Releases](#) section.
-2. Run the executable—no Python installation required!
-3. Access the UI at `http://localhost:5000`.
+## 📦 How to Download & Run
+1. Go to the **Releases** section of this repository.
+2. Download `DupClean_v1.0.exe`.
+3. Double-click the file to launch. 
+4. Your default browser will automatically open the DupClean interface.
 
-## 🤖 Pipeline Details
-The project includes a `Jenkinsfile` that automates:
-1. Environment setup and dependency installation.
-2. Building a standalone Windows `.exe`.
-3. Post-build verification.
+## 🛠️ Support
+If you encounter any issues or have suggestions, please open an **Issue** on this GitHub repository.
+
+## ✍️ Author
+**Mithali** *Cloud Enthusiast| Python Developer*
+[https://www.linkedin.com/in/mithali-t] | [tmithali6@gmail.com]
