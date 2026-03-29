@@ -38,6 +38,9 @@ If these tools have made your life easier, there are three ways you can support 
 - ☕ Support the Dev: If you’ve found massive value in DupClean and want to help me cover developer costs, you can donate via the Support Page.
 
 ---
+## 📥 Download Latest Version
+[![Download DupClean](https://img.shields.io/badge/Download-DupClean_v1.0-blue?style=for-the-badge&logo=windows)](https://github.com/Mithali-123/DupClean/releases/latest)
+---
 
 ## ✍️ Author
 **Mithali** *Cloud Enthusiast| Python Developer*
