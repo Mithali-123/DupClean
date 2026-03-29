@@ -2,265 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DupClean Pro</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>DupClean | Smart Utility</title>
     <style>
-        body { background: radial-gradient(circle, #f3f4f6 0%, #d1d5db 100%); transition: all 0.5s ease; }
-        .app-container { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); margin: auto; }
-        
-        /* Mobile View (Default) */
-        #app-frame { width: 100%; max-width: 380px; height: 780px; }
-        .category-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-
-        /* Laptop/Desktop View */
-        @media (min-width: 1024px) {
-            #app-frame { max-width: 850px; height: 620px; border-radius: 40px; }
-            .category-grid { grid-template-columns: repeat(4, 1fr); }
-        }
-
-        .dark-mode { background: #121212 !important; color: white !important; }
-        .dark-card { background: #1e1e1e !important; border: 1px solid #333 !important; }
-        .hidden { display: none; }
-        
-        /* Highlighting & Checkbox Styles */
-        .selected-file { border: 2px solid #7c3aed !important; background: #f5f3ff !important; transform: scale(0.98); }
-        .dark-mode .selected-file { background: #2d1b4e !important; }
-        .file-checkbox { width: 18px; height: 18px; accent-color: #7c3aed; pointer-events: none; }
-
-        .switch { position: relative; display: inline-block; width: 44px; height: 24px; }
-        .switch input { opacity: 0; width: 0; height: 0; }
-        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px; }
-        .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
-        input:checked + .slider { background-color: #7c3aed; }
-        input:checked + .slider:before { transform: translateX(20px); }
+        body { font-family: sans-serif; background: #f0f2f5; display: flex; justify-content: center; padding-top: 50px; }
+        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 450px; text-align: center; }
+        .btn { background: #6f42c1; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+        .btn:hover { background: #5a32a3; }
+        #log { margin-top: 20px; text-align: left; font-size: 0.9em; color: #333; max-height: 200px; overflow-y: auto; }
     </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-4">
-
-    <div id="app-frame" class="app-container bg-white rounded-[45px] border-[8px] border-gray-900 relative shadow-2xl overflow-hidden flex flex-col font-sans">
+<body>
+    <div class="card">
+        <h1>DupClean 🧹</h1>
+        <p>Clean your storage by identifying duplicates.</p>
         
-        <div id="home-view" class="p-8 pt-12 flex flex-col h-full">
-            <div class="flex justify-between items-center mb-10">
-                <h1 class="text-2xl font-black italic tracking-tighter">DUPCLEAN</h1>
-                <i class="fa-solid fa-gear text-xl opacity-30 cursor-pointer hover:rotate-90 transition-all" onclick="showView('settings-view')"></i>
-            </div>
-
-            <div class="category-grid mb-8">
-                <div onclick="openOverview('images')" class="category-card bg-gray-50 p-6 rounded-3xl relative cursor-pointer hover:bg-gray-100 transition-all border border-transparent">
-                    <span id="c-images" class="absolute top-3 right-4 font-bold text-xs opacity-40">0</span>
-                    <i class="fa-regular fa-image text-3xl text-pink-400 mb-2"></i>
-                    <span class="text-sm font-bold">Images</span>
-                </div>
-                <div onclick="openOverview('videos')" class="category-card bg-gray-50 p-6 rounded-3xl relative cursor-pointer hover:bg-gray-100 transition-all border border-transparent">
-                    <span id="c-videos" class="absolute top-3 right-4 font-bold text-xs opacity-40">0</span>
-                    <i class="fa-solid fa-video text-3xl text-purple-400 mb-2"></i>
-                    <span class="text-sm font-bold">Videos</span>
-                </div>
-                <div onclick="openOverview('audio')" class="category-card bg-gray-50 p-6 rounded-3xl relative cursor-pointer hover:bg-gray-100 transition-all border border-transparent">
-                    <span id="c-audio" class="absolute top-3 right-4 font-bold text-xs opacity-40">0</span>
-                    <i class="fa-solid fa-music text-3xl text-blue-400 mb-2"></i>
-                    <span class="text-sm font-bold">Audio</span>
-                </div>
-                <div onclick="openOverview('documents')" class="category-card bg-gray-50 p-6 rounded-3xl relative cursor-pointer hover:bg-gray-100 transition-all border border-transparent">
-                    <span id="c-documents" class="absolute top-3 right-4 font-bold text-xs opacity-40">0</span>
-                    <i class="fa-regular fa-file-lines text-3xl text-orange-400 mb-2"></i>
-                    <span class="text-sm font-bold">Docs</span>
-                </div>
-            </div>
-
-            <button onclick="startScan()" id="scan-btn" class="mt-auto mb-10 bg-purple-600 text-white font-bold py-5 rounded-2xl shadow-lg active:scale-95 transition-all">
-                SELECT FOLDER & SCAN
-            </button>
-        </div>
-
-        <div id="overview-view" class="p-8 pt-12 flex flex-col h-full hidden">
-            <i class="fa-solid fa-arrow-left mb-6 cursor-pointer opacity-40" onclick="showView('home-view')"></i>
-            <h2 id="ov-title" class="text-2xl font-bold capitalize mb-8">Category</h2>
-
-            <div class="space-y-6">
-                <div class="bg-gray-50 p-6 rounded-3xl category-card">
-                    <div class="flex justify-between text-[10px] font-bold mb-2 opacity-50 uppercase tracking-widest">
-                        <span>Original Files</span>
-                        <span id="ov-orig-count" class="text-gray-900">0</span>
-                    </div>
-                    <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
-                        <div id="ov-orig-bar" class="bg-blue-400 h-full w-full transition-all"></div>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 p-6 rounded-3xl category-card">
-                    <div class="flex justify-between text-[10px] font-bold mb-2 opacity-50 uppercase tracking-widest text-red-500">
-                        <span>Duplicates Identified</span>
-                        <span id="ov-dupe-count" class="text-red-500">0</span>
-                    </div>
-                    <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
-                        <div id="ov-dupe-bar" class="bg-red-400 h-full w-0 transition-all duration-1000"></div>
-                    </div>
-                </div>
-            </div>
-
-            <button onclick="showView('review-view')" class="mt-auto mb-10 bg-gray-900 text-white font-bold py-5 rounded-2xl active:scale-95 transition-all shadow-xl">
-                VIEW AND DELETE FILES
-            </button>
-        </div>
-
-        <div id="review-view" class="p-8 pt-12 flex flex-col h-full hidden">
-            <div class="flex justify-between items-center mb-6">
-                <i class="fa-solid fa-xmark text-xl cursor-pointer opacity-30" onclick="showView('overview-view')"></i>
-                <button onclick="selectAll()" class="text-purple-600 font-bold text-sm">Select All</button>
-            </div>
-            
-            <div id="file-list" class="flex-1 overflow-y-auto space-y-3 pb-24 pr-2"></div>
-
-            <button id="del-btn" class="absolute bottom-8 left-8 right-8 bg-red-500 text-white font-bold py-4 rounded-2xl shadow-xl transition-all" onclick="confirmDelete()">
-                DELETE SELECTED (0)
-            </button>
-        </div>
-
-        <div id="settings-view" class="p-8 pt-12 flex flex-col h-full hidden">
-            <i class="fa-solid fa-arrow-left mb-6 cursor-pointer opacity-30" onclick="showView('home-view')"></i>
-            <h1 class="text-2xl font-bold mb-8">Settings</h1>
-            
-            <div class="flex justify-between items-center p-5 bg-gray-50 rounded-2xl category-card mb-4">
-                <span class="font-bold">Dark Mode</span>
-                <label class="switch"><input type="checkbox" onchange="toggleDark()"><span class="slider"></span></label>
-            </div>
-
-            <div class="p-5 bg-gray-50 rounded-2xl category-card mb-4">
-                <p class="text-[10px] opacity-40 font-bold mb-1 uppercase tracking-widest">Trash Bin</p>
-                <p id="trash-count-text" class="text-xl font-bold text-purple-600">0 files</p>
-                <button onclick="emptyPermanently()" class="text-[10px] font-bold text-red-500 mt-2 uppercase tracking-widest hover:opacity-70 transition-all">Clear Log</button>
-            </div>
-
-            <div class="p-5 bg-gray-50 rounded-2xl category-card mt-2">
-                <h3 class="text-lg font-bold mb-3">About</h3>
-                <p class="text-sm font-bold text-purple-600 mb-1">DupClean - Duplicate File Cleaner</p>
-                <p class="text-xs text-gray-400 mb-4">Version 1.0.0</p>
-                <p class="text-xs leading-relaxed text-orange-600 font-medium">
-                    Keep your storage clean and organized by removing duplicate files.
-                </p>
-            </div>
-        </div>
+        <input type="file" id="folderPicker" webkitdirectory directory multiple style="display: none;">
+        <button class="btn" onclick="document.getElementById('folderPicker').click()">Select Folder & Scan</button>
+        
+        <div id="log">Ready...</div>
     </div>
 
     <script>
-        let currentFiles = [];
-        let selectedPaths = new Set();
-        let activeCat = "";
-
-        function showView(id) {
-            ['home-view', 'overview-view', 'review-view', 'settings-view'].forEach(v => {
-                document.getElementById(v).classList.add('hidden');
-            });
-            document.getElementById(id).classList.remove('hidden');
-        }
-
-        async function startScan() {
-            const btn = document.getElementById('scan-btn');
-            btn.innerText = "OPENING PICKER...";
-            const res = await fetch('/api/scan', { method: 'POST' });
-            const data = await res.json();
-            if(data.status === 'success') {
-                for(let c in data.counts) {
-                    const el = document.getElementById(`c-${c}`);
-                    el.innerText = data.counts[c];
-                    el.style.opacity = data.counts[c] > 0 ? "1" : "0.4";
-                }
+        document.getElementById('folderPicker').addEventListener('change', function(e) {
+            const files = e.target.files;
+            if (files.length > 0) {
+                // In modern browsers, we can't get the full disk path for security, 
+                // but we can process the file objects directly or use the folder name.
+                const folderName = files[0].webkitRelativePath.split('/')[0];
+                document.getElementById('log').innerHTML = "<b>Scanning:</b> " + folderName;
+                
+                // Example of sending the intent to the backend
+                fetch('/scan', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ path: folderName })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('log').innerHTML += "<br>" + data.message;
+                });
             }
-            btn.innerText = "SELECT FOLDER & SCAN";
-        }
-
-        async function openOverview(cat) {
-            activeCat = cat;
-            document.getElementById('ov-title').innerText = cat;
-            const res = await fetch(`/api/get_category/${cat}`);
-            currentFiles = await res.json();
-            
-            const dupes = currentFiles.filter(f => f.is_duplicate);
-            const originals = currentFiles.filter(f => !f.is_duplicate);
-            const percent = (dupes.length / currentFiles.length) * 100 || 0;
-            
-            document.getElementById('ov-dupe-count').innerText = dupes.length;
-            document.getElementById('ov-orig-count').innerText = originals.length;
-            document.getElementById('ov-dupe-bar').style.width = percent + '%';
-            
-            renderReview();
-            showView('overview-view');
-        }
-
-        function renderReview() {
-            const list = document.getElementById('file-list');
-            const dupes = currentFiles.filter(f => f.is_duplicate);
-            
-            list.innerHTML = dupes.length === 0 ? `<div class="text-center py-20 opacity-20 italic">No duplicates found.</div>` :
-                dupes.map((f, i) => {
-                    const isSelected = selectedPaths.has(f.path);
-                    return `
-                    <div onclick="toggleFile('${f.path}', ${i})" id="f-${i}" 
-                         class="p-4 bg-gray-50 rounded-2xl cursor-pointer border-2 transition-all category-card flex items-center justify-between ${isSelected ? 'selected-file' : 'border-transparent'}">
-                        <div class="truncate flex-1 pr-4">
-                            <p class="text-[11px] font-bold truncate">${f.name}</p>
-                            <p class="text-[9px] opacity-40 truncate">${f.path}</p>
-                            <p class="text-[9px] text-purple-600 font-bold mt-1">${f.size}</p>
-                        </div>
-                        <input type="checkbox" class="file-checkbox" ${isSelected ? 'checked' : ''}>
-                    </div>`;
-                }).join('');
-            updateBtn();
-        }
-
-        function toggleFile(path, i) {
-            const el = document.getElementById(`f-${i}`);
-            const checkbox = el.querySelector('input');
-            if(selectedPaths.has(path)) {
-                selectedPaths.delete(path);
-                el.classList.remove('selected-file');
-                checkbox.checked = false;
-            } else {
-                selectedPaths.add(path);
-                el.classList.add('selected-file');
-                checkbox.checked = true;
-            }
-            updateBtn();
-        }
-
-        function selectAll() {
-            currentFiles.forEach((f) => { if(f.is_duplicate) selectedPaths.add(f.path); });
-            renderReview();
-        }
-
-        function updateBtn() {
-            document.getElementById('del-btn').innerText = `DELETE SELECTED (${selectedPaths.size})`;
-        }
-
-        async function confirmDelete() {
-            const paths = Array.from(selectedPaths);
-            if(paths.length === 0) return;
-            if(!confirm(`Move ${paths.length} files to Recycle Bin?`)) return;
-
-            const res = await fetch('/api/delete', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ paths: paths })
-            });
-            const data = await res.json();
-            document.getElementById('trash-count-text').innerText = `${data.total_trash} files`;
-            alert(`Success! ${data.deleted} files moved to System Recycle Bin.`);
-            location.reload();
-        }
-
-        async function emptyPermanently() {
-            if(!confirm("Clear application log?")) return;
-            await fetch('/api/empty_trash', { method: 'POST' });
-            location.reload();
-        }
-
-        function toggleDark() {
-            document.getElementById('app-frame').classList.toggle('dark-mode');
-            document.querySelectorAll('.category-card').forEach(c => c.classList.toggle('dark-card'));
-        }
+        });
     </script>
 </body>
 </html>

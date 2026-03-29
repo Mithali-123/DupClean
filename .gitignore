@@ -1,0 +1,14 @@
+# Python junk
+__pycache__/
+*.py[cod]
+*$py.class
+buildozer-env/
+
+# PyInstaller junk
+build/
+dist/
+*.spec
+
+# Local system files
+.vscode/
+.idea/

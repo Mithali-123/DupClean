@@ -5,17 +5,21 @@ pipeline {
         PROJECT_DIR = 'C:\\project'
     }
     stages {
+        stage('Environment Prep') {
+            steps {
+                // Ensure the templates folder is actually there before building
+                bat "if not exist ${PROJECT_DIR}\\templates mkdir ${PROJECT_DIR}\\templates"
+            }
+        }
         stage('Build Standalone EXE') {
             steps {
-                script {
-                    // Using single quotes for the add-data paths to avoid syntax errors
-                    bat """
-                    cd /d ${PROJECT_DIR} && ^
-                    \"${env.PYTHON_EXE}\" -m PyInstaller --noconsole --onefile --clean ^
-                    --add-data 'templates;templates' ^
-                    app.py
-                    """
-                }
+                bat """
+                cd /d ${PROJECT_DIR} && ^
+                \"${env.PYTHON_EXE}\" -m PyInstaller --noconsole --onefile --clean ^
+                --name DupClean_v1.0 ^
+                --add-data \"templates;templates\" ^
+                app.py
+                """
             }
         }
     }
