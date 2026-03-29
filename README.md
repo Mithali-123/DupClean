@@ -10,6 +10,8 @@
 - **User-Friendly:** A clean, modern interface designed for both tech-savvy users and beginners.
 - **Standalone:** No complex installation required; just run the EXE and go.
 
+---
+
 ## 🛠️ Tech Stack
 - **Frontend:** HTML5, CSS3 (Modern Responsive UI)
 - **Backend:** Python (Flask Framework)
@@ -18,21 +20,24 @@
   - `PyInstaller`: For compiling the project into a standalone Windows Executable.
 - **CI/CD:** Jenkins (Automated Build Pipeline)
 
+---
+
 ## 📦 How to Download & Run
 1. Go to the **Releases** section of this repository.
 2. Download `DupClean_v1.0.exe`.
 3. Double-click the file to launch. 
 4. Your default browser will automatically open the DupClean interface.
 
-##❤️ Support the Project
-ToolSuite is a passion project built by a solo developer. If these tools have made your life easier, there are three ways you can support the project:
+---
+
+##❤️**Support**
+If these tools have made your life easier, there are three ways you can support the project:
 
 ⭐ Star this Repo: It helps other developers find the project and tells me you like my work!
 📢 Share it: Tell a friend or colleague about ToolSuite. Word-of-mouth is the best way to grow.
 ☕ Support the Dev: If you’ve found massive value in ToolSuite and want to help me cover developer costs, you can donate via the Support Page.
-Important
 
-Donations are entirely optional. ToolSuite is free software and will remain free for everyone. Your support, in any form (even just a star!), is deeply appreciated!
+---
 
 ## ✍️ Author
 **Mithali** *Cloud Enthusiast| Python Developer*
