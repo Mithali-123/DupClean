@@ -1,0 +1,14 @@
+body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; display: flex; justify-content: center; }
+.app-container { background: white; width: 360px; height: 700px; padding: 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; }
+.hidden { display: none; }
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.info-box { background: #e3f2fd; border: 1px solid #bbdefb; padding: 15px; border-radius: 12px; display: flex; gap: 10px; color: #1976d2; font-size: 11px; margin-bottom: 20px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
+.card { background: #f8f9fa; padding: 25px; border-radius: 15px; text-align: center; position: relative; cursor: pointer; }
+.badge { position: absolute; top: 10px; right: 10px; font-weight: bold; font-size: 12px; }
+.section-title { color: #bdbdbd; font-size: 12px; letter-spacing: 1px; }
+.storage-info { display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; margin-bottom: 5px; }
+.progress-bar { background: #eeeeee; height: 8px; border-radius: 4px; overflow: hidden; margin-bottom: 20px; }
+.progress-fill { background: #ba68c8; width: 35%; height: 100%; }
+.main-btn { background: #7c4dff; color: white; border: none; width: 100%; padding: 15px; border-radius: 12px; font-weight: bold; cursor: pointer; position: absolute; bottom: 20px; left: 0; width: calc(100% - 40px); margin: 0 20px; }
+.alert { background: #f3e5f5; color: #7b1fa2; padding: 15px; border-radius: 10px; margin-top: 20px; font-size: 13px; }
