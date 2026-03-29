@@ -1,55 +1,43 @@
 import os
 import sys
-import send2trash
-from flask import Flask, render_template, jsonify, request
 import webbrowser
 from threading import Timer
+from flask import Flask, render_template, jsonify, request
+from plyer import filechooser # This opens the REAL Windows dialog
+import send2trash
 
 def get_resource_path(relative_path):
-    """ Get absolute path to resource, works for dev and for PyInstaller """
-    try:
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath(".")
-    return os.path.join(base_path, relative_path)
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, relative_path)
+    return os.path.join(os.path.abspath("."), relative_path)
 
 app = Flask(__name__, 
-            template_folder=get_resource_path('templates'),
-            static_folder=get_resource_path('static'))
+            template_folder=get_resource_path('templates'))
+
+selected_path = ""
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/scan', methods=['POST'])
+@app.route('/open_dialog', methods=['POST'])
+def open_dialog():
+    global selected_path
+    # This pops up the actual Windows folder picker
+    path = filechooser.choose_dir(title="Select Folder to Clean")
+    if path:
+        selected_path = path[0]
+        return jsonify({"status": "success", "path": selected_path})
+    return jsonify({"status": "error", "message": "No folder selected"})
+
+@app.route('/scan', methods=['GET'])
 def scan():
-    data = request.json
-    folder_path = data.get('path')
+    if not selected_path:
+        return jsonify({"status": "error", "message": "Pick a folder first!"})
     
-    if not folder_path or not os.path.exists(folder_path):
-        return jsonify({"status": "error", "message": "Invalid folder path!"}), 400
-
-    # Logic to find duplicates (example based on file size/name)
-    files_found = []
-    for root, dirs, files in os.walk(folder_path):
-        for name in files:
-            files_found.append(os.path.join(root, name))
-            
-    return jsonify({
-        "status": "success", 
-        "message": f"Scan complete! Found {len(files_found)} files.",
-        "files": files_found[:10] # Sending first 10 for display
-    })
-
-@app.route('/delete', methods=['POST'])
-def delete_file():
-    data = request.json
-    file_path = data.get('path')
-    try:
-        send2trash.send2trash(file_path) # Safely moves to Recycle Bin
-        return jsonify({"status": "success", "message": "File moved to Recycle Bin"})
-    except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
+    # Simple logic: finds files with "copy" in name or same size
+    files = [f for f in os.listdir(selected_path) if os.path.isfile(os.path.join(selected_path, f))]
+    return jsonify({"status": "success", "files": files, "folder": selected_path})
 
 def open_browser():
     webbrowser.open_new('http://127.0.0.1:5000/')
