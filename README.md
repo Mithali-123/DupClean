@@ -4,7 +4,7 @@
 ## Description 🚀
 **DupClean Pro** is a professional-grade workspace optimization assistant designed to help you reclaim valuable disk space safely. Built with speed and privacy in mind, it uses a local hashing algorithm to identify exact duplicates (byte-by-byte) rather than just relying on names. 
 
-It organizes results into intuitive categories—Images, Videos, Documents, and Audio—and allows you to stage files in a "Permanent Delete Bin" before final removal. **The entire application runs 100% offline.** Your file data and structure never leave your computer.
+It organizes results into intuitive categories—Images, Videos, Documents, and Audio—and allows you to stage files in a "Permanent Delete Bin" before final removal. **The entire application runs 100% offline.** 
 
 ## Core Features 🛠️
 
