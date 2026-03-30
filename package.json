@@ -14,6 +14,7 @@
   "build": {
     "appId": "com.moseskenny.dupclean",
     "productName": "DupClean Pro",
+    "icon": "icon.ico", 
     "directories": {
       "output": "release"
     },
@@ -28,7 +29,8 @@
       }
     ],
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "icon.ico"
     },
     "nsis": {
       "oneClick": false,
