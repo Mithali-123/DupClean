@@ -20,8 +20,10 @@ function createWindow() {
   });
 
   // ONLY LAUNCH .EXE IF THE APP IS PUBLISHED
+ // ONLY LAUNCH .EXE IF THE APP IS PUBLISHED
   if (app.isPackaged) {
-    const pyPath = path.join(process.resourcesPath, 'app.exe');
+    // FIX: Added 'backend' to match where we told the builder to put it!
+    const pyPath = path.join(process.resourcesPath, 'backend', 'app.exe');
     try { 
       pyProcess = spawn(pyPath); 
     } catch (e) { 
