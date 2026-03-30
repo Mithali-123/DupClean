@@ -2,7 +2,7 @@
 **A modern, aesthetic, and completely offline duplicate file optimizer.**
 
 <p align="center">
-  <img src="./icon.png" width="150px" alt="DupClean Pro Logo" />
+  <img src="./icon.png" width="150px"/>
 </p>
 
 ## Description 🚀
