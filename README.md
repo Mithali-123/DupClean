@@ -28,21 +28,12 @@ It organizes results into intuitive categories—Images, Videos, Documents, and 
 
 ## How to Download and Run (for Users) 📦
 
-### Method 1 (Recommended): Use the Setup Wizard
 This is the easiest way to use DupClean Pro on Windows. No dependencies or Python required.
 
 1.  Navigate to the [GitHub Releases](../../releases) page for this repository.
 2.  Download the **`DupClean Pro Setup 1.0.0.exe`** file.
 3.  Double-click the setup file and follow the professional installer instructions.
 4.  Once installed, you can launch DupClean Pro from your Start Menu or Desktop shortcut!
-
-### Method 2 (For Developers): Run from Source
-If you want to contribute, you must have Node.js and Python installed.
-
-1.  Clone this repository.
-2.  In one terminal (Backend): Navigate to `backend/` and run `pip install -r requirements.txt`, then `python app.py`.
-3.  In another terminal (Frontend): Navigate to `frontend/` and run `npm install`, then `npm run dev`.
-4.  In a third terminal (Root): Run `npm install`, then `npm start` to open the Electron bridge.
 
 ---
 
