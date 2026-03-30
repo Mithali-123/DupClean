@@ -1,14 +1,7 @@
-# Python junk
-__pycache__/
-*.py[cod]
-*$py.class
-buildozer-env/
-
-# PyInstaller junk
-build/
+node_modules/
+release/
 dist/
-*.spec
-
-# Local system files
-.vscode/
-.idea/
+frontend/dist/
+backend/dist/
+backend/__pycache__/
+*.exe
