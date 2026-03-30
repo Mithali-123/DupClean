@@ -63,7 +63,7 @@ DupClean Pro is a passion project built to keep your digital life private and or
 
 ## 👤 Author
 
-**Moses Kenny** *Cloud & DevOps Enthusiast | Python Developer* [GitHub](https://github.com/Moseskenny) | [LinkedIn](#)
+**Mithali** *Cloud Enthusiast | Python Developer* [GitHub](https://github.com/Mithali-123) | [LinkedIn](https://www.linkedin.com/in/mithali-t-747336297/)
 
 ---
 
