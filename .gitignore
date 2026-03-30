@@ -5,3 +5,4 @@ frontend/dist/
 backend/dist/
 backend/__pycache__/
 *.exe
+Jenkinsfile/
