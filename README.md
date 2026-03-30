@@ -1,38 +1,10 @@
 # DupClean Pro ✨
 **A modern, aesthetic, and completely offline duplicate file optimizer.**
 
-<p align="center">
-  <img src="./icon.png" width="150px"/>
-</p>
-
 ## Description 🚀
 **DupClean Pro** is a professional-grade workspace optimization assistant designed to help you reclaim valuable disk space safely. Built with speed and privacy in mind, it uses a local hashing algorithm to identify exact duplicates (byte-by-byte) rather than just relying on names. 
 
 It organizes results into intuitive categories—Images, Videos, Documents, and Audio—and allows you to stage files in a "Permanent Delete Bin" before final removal. **The entire application runs 100% offline.** Your file data and structure never leave your computer.
-
----
-
-## 📸 How It Works (Workflow)
-
-### 1. Scan Your Drive
-Select a target folder and let the app quickly categorize your files.
-<p align="center">
-  <img src="./dashboard.png" alt="DupClean Dashboard" width="800px"/>
-</p>
-
-### 2. Analyze & Stage
-Review exact duplicates, select the redundancies you don't need, and safely move them to the staging bin.
-<p align="center">
-  <img src="./analysis.png" alt="DupClean Analysis View" width="800px"/>
-</p>
-
-### 3. Permanently Delete
-Head to the Settings menu to empty your staging bin and permanently reclaim your hard drive space!
-<p align="center">
-  <img src="./settings.png" alt="DupClean Settings and Trash Bin" width="800px"/>
-</p>
-
----
 
 ## Core Features 🛠️
 
