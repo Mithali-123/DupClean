@@ -13,7 +13,7 @@ It organizes results into intuitive categories—Images, Videos, Documents, and 
 See DupClean Pro in action and learn how to quickly identify and remove duplicate files from your system.
 
 ## Dashboard
-<img width="1920" height="1020" alt="analysis" src="https://github.com/user-attachments/assets/8dc3a4c1-f467-4e15-931e-04ada3c6d801" />
+<img width="1920" height="1020" alt="Dashboard" src="https://github.com/user-attachments/assets/72e717e6-5d20-4b55-93a7-4878325bba1d" />
 
 ## Results
 <img width="1920" height="1020" alt="analysis" src="https://github.com/user-attachments/assets/4234c4cb-d292-4d87-a2bd-c25f204e1a59" />
