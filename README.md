@@ -6,6 +6,7 @@
 
 It organizes results into intuitive categories—Images, Videos, Documents, and Audio—and allows you to stage files in a "Permanent Delete Bin" before final removal. **The entire application runs 100% offline.** 
 
+<<<<<<< HEAD
 ---
 
 ## 🎥 Workflow Demo
@@ -25,6 +26,8 @@ See DupClean Pro in action and learn how to quickly identify and remove duplicat
 
 ---
 
+=======
+>>>>>>> 50b2346 (V1.0.0 - Complete working local app)
 ## Core Features 🛠️
 
 - **Fast, Local Scanning:** Uses high-speed MD5 hashing to find exact duplicate files, even with different names.
@@ -67,7 +70,11 @@ DupClean Pro is a passion project built to keep your digital life private and or
 
 ## 👤 Author
 
+<<<<<<< HEAD
 **Mithali** *Cloud Enthusiast | Python Developer* [GitHub](https://github.com/Mithali-123) | [LinkedIn](https://www.linkedin.com/in/mithali-t-747336297/)
+=======
+**Mithali** *Cloud Enthusiast | Python Developer* [GitHub](https://github.com/Mithali-123) | [LinkedIn](https://www.linkedin.com/in/mithali-t)
+>>>>>>> 50b2346 (V1.0.0 - Complete working local app)
 
 ---
 
