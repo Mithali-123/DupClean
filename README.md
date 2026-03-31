@@ -6,6 +6,26 @@
 
 It organizes results into intuitive categories—Images, Videos, Documents, and Audio—and allows you to stage files in a "Permanent Delete Bin" before final removal. **The entire application runs 100% offline.** Your file data and structure never leave your computer.
 
+---
+
+## 🎥 Workflow Demo
+
+See DupClean Pro in action and learn how to quickly identify and remove duplicate files from your system.
+
+## Dashboard
+<img width="1920" height="1020" alt="analysis" src="https://github.com/user-attachments/assets/8dc3a4c1-f467-4e15-931e-04ada3c6d801" />
+
+## Results
+<img width="1920" height="1020" alt="analysis" src="https://github.com/user-attachments/assets/4234c4cb-d292-4d87-a2bd-c25f204e1a59" />
+
+## Delete
+<img width="1919" height="1020" alt="Delete" src="https://github.com/user-attachments/assets/e90300c6-6b82-415e-ae98-1ca3dd392e49" />
+
+
+> 💡 Tip: The demo walks through scanning, reviewing duplicates, staging deletions, and permanently clearing space.
+
+---
+
 ## Core Features 🛠️
 
 - **Fast, Local Scanning:** Uses high-speed MD5 hashing to find exact duplicate files, even with different names.
@@ -28,7 +48,6 @@ It organizes results into intuitive categories—Images, Videos, Documents, and 
 
 ## How to Download and Run (for Users) 📦
 
-### Method 1 (Recommended): Use the Setup Wizard
 This is the easiest way to use DupClean Pro on Windows. No dependencies or Python required.
 
 1.  Navigate to the [GitHub Releases](../../releases) page for this repository.
@@ -36,28 +55,14 @@ This is the easiest way to use DupClean Pro on Windows. No dependencies or Pytho
 3.  Double-click the setup file and follow the professional installer instructions.
 4.  Once installed, you can launch DupClean Pro from your Start Menu or Desktop shortcut!
 
-### Method 2 (For Developers): Run from Source
-If you want to contribute, you must have Node.js and Python installed.
-
-1.  Clone this repository.
-2.  In one terminal (Backend): Navigate to `backend/` and run `pip install -r requirements.txt`, then `python app.py`.
-3.  In another terminal (Frontend): Navigate to `frontend/` and run `npm install`, then `npm run dev`.
-4.  In a third terminal (Root): Run `npm install`, then `npm start` to open the Electron bridge.
-
 ---
 
 ## 💖 Support the Project
-
-![Sponsors](https://img.shields.io/badge/sponsors-0-ea4aaa?style=flat-square)
 
 DupClean Pro is a passion project built to keep your digital life private and organized. If these tools have made your life easier, there are three ways you can support the project:
 
 1. ⭐ **Star this Repo:** It helps other developers find the project and tells me you like my work!
 2. 📣 **Share it:** Tell a friend or colleague about DupClean Pro. Word-of-mouth is the best way to grow.
-3. ☕ **Support the Dev:** If you’ve found massive value in DupClean Pro, check out our [Support Page](#) for ways to contribute.
-
-> [!IMPORTANT]
-> **Donations are entirely optional.** DupClean Pro is free software and will remain free for everyone. Your support, in any form (even just a star!), is deeply appreciated!
 
 ---
 
