@@ -1,3 +1,4 @@
+require('update-electron-app')();
 const { app, BrowserWindow, ipcMain, dialog, Menu } = require('electron');
 const path = require('path');
 const { spawn } = require('child_process');
@@ -17,6 +18,7 @@ function createWindow() {
     frame: false,           // REMOVES THE WINDOW BORDER
     autoHideMenuBar: true,  // HIDES THE MENU BAR FOREVER
     titleBarStyle: 'hidden', 
+    icon: path.join(__dirname, 'icon.ico'),
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -32,7 +34,7 @@ function createWindow() {
   } else {
     mainWindow.loadURL('http://localhost:5173');
   }
-mainWindow.webContents.openDevTools();
+
 }
 
 // Custom Window Controls (Connects to our new React buttons)

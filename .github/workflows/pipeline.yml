@@ -1,0 +1,52 @@
+name: Build and Release DupClean Pro
+
+on:
+  push:
+    tags:
+      - 'v*' 
+
+jobs:
+  build:
+    runs-on: windows-latest # Windows is required to build the .exe backend
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install Frontend & Build
+        run: |
+          cd frontend
+          npm install
+          npm run build
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Build Python Backend
+        run: |
+          pip install -r requirements.txt
+          pyinstaller --onefile --noconsole --name app app.py
+          mkdir -p backend/dist
+          move dist/app.exe backend/dist/app.exe
+
+      - name: Build Electron App
+        run: |
+          npm install
+          npm run dist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: release/*.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
