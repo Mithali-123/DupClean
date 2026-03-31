@@ -21,8 +21,12 @@ pipeline {
                 echo 'Compiling Python to executable...'
                 // Using 'bat' instead of 'sh' since we are on a Windows node
                 dir('backend'){
-                bat 'python -m pip install -r requirements.txt'
-                bat 'python -m pyinstaller app.spec'}
+               bat '''
+                python -m venv venv
+                call venv\\Scripts\\activate.bat
+                pip install -r requirements.txt
+                pyinstaller app.spec
+            '''}
             }
         }
 
