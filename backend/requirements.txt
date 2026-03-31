@@ -1,0 +1,5 @@
+flask
+flask-cors
+send2trash
+plyer
+pyinstaller
