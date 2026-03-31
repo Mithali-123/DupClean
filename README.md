@@ -6,6 +6,25 @@
 
 It organizes results into intuitive categories—Images, Videos, Documents, and Audio—and allows you to stage files in a "Permanent Delete Bin" before final removal. **The entire application runs 100% offline.** 
 
+---
+
+## 🎥 Workflow Demo
+
+See DupClean Pro in action and learn how to quickly identify and remove duplicate files from your system.
+
+### 🔍 Dashboard
+![Scan](Workflow/Dashboard.png)
+
+### 📊 Duplicate Results
+![Results](Workflow/analysis.png)
+
+### 🗑️ Deletion Workflow
+![Delete](Workflow/Delete.png)
+
+> 💡 Tip: The demo walks through scanning, reviewing duplicates, staging deletions, and permanently clearing space.
+
+---
+
 ## Core Features 🛠️
 
 - **Fast, Local Scanning:** Uses high-speed MD5 hashing to find exact duplicate files, even with different names.
