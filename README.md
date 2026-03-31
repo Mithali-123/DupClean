@@ -39,16 +39,10 @@ This is the easiest way to use DupClean Pro on Windows. No dependencies or Pytho
 
 ## 💖 Support the Project
 
-![Sponsors](https://img.shields.io/badge/sponsors-0-ea4aaa?style=flat-square)
-
 DupClean Pro is a passion project built to keep your digital life private and organized. If these tools have made your life easier, there are three ways you can support the project:
 
 1. ⭐ **Star this Repo:** It helps other developers find the project and tells me you like my work!
 2. 📣 **Share it:** Tell a friend or colleague about DupClean Pro. Word-of-mouth is the best way to grow.
-3. ☕ **Support the Dev:** If you’ve found massive value in DupClean Pro, check out our [Support Page](#) for ways to contribute.
-
-> [!IMPORTANT]
-> **Donations are entirely optional.** DupClean Pro is free software and will remain free for everyone. Your support, in any form (even just a star!), is deeply appreciated!
 
 ---
 
