@@ -77,21 +77,16 @@ body { margin: 0; padding: 0; background-color: #0b0d17; color: #ffffff; overflo
 }
 .modern-hero::before { content: ''; position: absolute; top: -50px; left: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%); }
 
-.centered-hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 25px 30px; } /* Shrink padding significantly */
+.centered-hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 25px 30px; }
 .centered-hero .hero-content { display: flex; flex-direction: column; align-items: center; z-index: 10; }
 
-.app-branding { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; margin: 0 0 5px 0; background: linear-gradient(to right, #8b5cf6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; } /* Reduced font size */
-.hero-content h3 { font-size: 1rem; margin: 0 0 10px 0; font-weight: 500; color: #e2e8f0; } /* Reduced font size */
+.app-branding { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; margin: 0 0 5px 0; background: linear-gradient(to right, #8b5cf6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero-content h3 { font-size: 1rem; margin: 0 0 10px 0; font-weight: 500; color: #e2e8f0; }
 .hero-content p { color: #8A8D9F; font-size: 0.9rem; line-height: 1.5; margin: 0; max-width: 450px; }
 .target-path { margin-top: 15px !important; font-family: monospace; color: #06b6d4 !important; background: rgba(6, 182, 212, 0.1); padding: 6px 16px; border-radius: 100px; font-size: 0.85rem;}
 
 /* --- NEW BOTTOM ACTION BUTTON --- */
-.bottom-action-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    padding-bottom: 20px;
-}
+.bottom-action-container { display: flex; justify-content: center; margin-top: 50px; padding-bottom: 20px; }
 .hero-action-btn { font-size: 1.05rem !important; padding: 14px 40px !important; }
 
 /* --- GRADIENT CARDS --- */
@@ -113,7 +108,7 @@ body { margin: 0; padding: 0; background-color: #0b0d17; color: #ffffff; overflo
 .glass-btn { background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1); padding: 10px 20px; border-radius: 100px; cursor: pointer; display: flex; gap: 8px; }
 .back-btn { background: transparent; border: none; color: #8A8D9F; font-size: 1rem; cursor: pointer; display: flex; align-items: center; gap: 5px; margin-bottom: 20px; padding: 0; }
 
-/* --- ANALYSIS VIEW & LISTS (Unchanged) --- */
+/* --- ANALYSIS VIEW & LISTS --- */
 .stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
 .stat-card { background: #121420; padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
 .stat-card span { color: #8A8D9F; font-size: 0.9rem; }

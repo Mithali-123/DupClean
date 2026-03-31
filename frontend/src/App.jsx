@@ -227,7 +227,6 @@ function App() {
             </div>
           )}
 
-          {/* ... (Analysis view remains identical) ... */}
           {view === 'analysis' && (
             <div className="fade-in">
               <button className="back-btn" onClick={() => setView('dashboard')}>
