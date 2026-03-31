@@ -21,8 +21,8 @@ pipeline {
                 echo 'Compiling Python to executable...'
                 // Using 'bat' instead of 'sh' since we are on a Windows node
                 dir('backend'){
-                bat 'pip install -r requirements.txt'
-                bat 'pyinstaller app.spec'}
+                bat 'python -m pip install -r requirements.txt'
+                bat 'python -m pyinstaller app.spec'}
             }
         }
 
