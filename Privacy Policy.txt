@@ -1,0 +1,30 @@
+Privacy Policy: DupClean Pro
+Effective Date: April 2, 2026
+
+1. Overview
+DupClean Pro ("the Application") is a professional-grade utility developed by Moseskenny. We are committed to maintaining the highest standards of data privacy. This policy outlines our "Zero Data" approach, ensuring your files and personal information never leave your local environment.
+
+2. Data Collection and Transmission
+Zero Personal Data: DupClean Pro does not collect, store, or transmit any personally identifiable information (PII). This includes, but is not limited to, names, email addresses, IP addresses, or device identifiers.
+
+Local Processing Only: All core functions—including file scanning, MD5 hash generation for deduplication, and file organization—are performed 100% offline on your local machine. No data is uploaded to the cloud, external servers, or shared with the developer.
+
+No Third-Party Analytics: We do not use cookies, tracking pixels, or third-party telemetry services (like Google Analytics or Mixpanel) to monitor user behavior.
+
+3. File System Permissions
+To function as a deduplication utility, DupClean Pro requires permission to access the specific folders you select for scanning.
+
+Usage: These permissions are used solely to identify and manage duplicate files as per your direct commands.
+
+Security: The application does not modify or delete any files without explicit user confirmation.
+
+4. Data Retention
+Since DupClean Pro does not collect or transmit data, there is no data stored by the developer. Any configuration settings (such as "Exclude Folders" lists) are stored locally on your device and are deleted if the application is uninstalled.
+
+5. Compliance with Microsoft Store Policy 10.5.1
+This Application complies with Microsoft Store policies by providing transparent information regarding data access. Because the Application does not collect personal information, no user consent for data sharing is required, as no sharing occurs.
+
+6. Contact Information
+For any inquiries regarding this Privacy Policy or the technical operations of DupClean Pro, please contact:
+Developer: Mithali T
+Email: tmithali6@gmail.com
