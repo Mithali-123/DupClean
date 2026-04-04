@@ -46,6 +46,19 @@ See DupClean Pro in action and learn how to quickly identify and remove duplicat
 
 ---
 
+## 🚨 New Update Available!
+
+🔥 **Version 1.1 is now live!**
+
+### ✨ What's New
+- Added new features 🚀  
+- Improved performance ⚡  
+- Bug fixes & UI enhancements 🎨  
+
+👉 Make sure to pull the latest changes or download the newest release.
+
+---
+
 ## How to Download and Run (for Users) 📦
 
 This is the easiest way to use DupClean Pro on Windows. No dependencies or Python required.
