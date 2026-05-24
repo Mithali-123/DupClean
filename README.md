@@ -37,11 +37,8 @@ We've completely overhauled DupClean Pro for maximum performance and usability. 
 
 ## ❤️ Support
 If you found this tool helpful in freeing up gigabytes of space on your machine, consider supporting the development!
-<p align="left">
-  <a href="https://github.com/sponsors/Mithali-123">
-    <img src="https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?style=for-the-badge&logo=github" alt="Sponsor on GitHub" />
-  </a>
-</p>
+Share my app with as many users as u can to help me grow!
+
 
 ## 👨‍💻 Author
 **Mithali** *Python & App Developer* Passionate about building highly optimized, user-centric desktop applications and automating complex workflows.  
