@@ -6,3 +6,48 @@ backend/dist/
 backend/__pycache__/
 *.exe
 Jenkinsfile
+# Ignore heavy installer packages
+*.msix
+backend/build/
+# Build files
+build/
+dist/
+*.msix
+*.exe
+*.pkg
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# VSCode
+<<<<<<< HEAD
+.vscode/
+# Node
+node_modules/
+dist/
+build/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+env/
+# Binaries/Installers
+*.exe
+*.msix
+*.exe
+*.pkg
+*.dmg
+# System
+.DS_Store
+=======
+.vscode/
+>>>>>>> backup/electron
+*.msix 
+*.pkg 
+backend/build/ 

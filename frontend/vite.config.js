@@ -1,8 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './', // <--- THIS IS THE MAGIC FIX FOR THE WHITE SCREEN
+  base: './', // Force relative paths
+  build: {
+    emptyOutDir: true, // Cleans the old broken files before building
+    outDir: 'dist'
+  }
 })
