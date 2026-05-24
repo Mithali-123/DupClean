@@ -41,14 +41,11 @@ If you found this tool helpful in freeing up gigabytes of space on your machine,
   <a href="https://github.com/sponsors/Mithali-123">
     <img src="https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?style=for-the-badge&logo=github" alt="Sponsor on GitHub" />
   </a>
-  <a href="https://www.buymeacoffee.com/">
-    <img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" />
-  </a>
 </p>
 
 ## 👨‍💻 Author
 **Mithali** *Python & App Developer* Passionate about building highly optimized, user-centric desktop applications and automating complex workflows.  
-🔗 [Connect with me on LinkedIn](#) *(https://www.linkedin.com/in/mithali-t-747336297/)* 🐙 [GitHub Profile](https://github.com/Mithali-123)
+🔗 [Connect with me on LinkedIn](https://www.linkedin.com/in/mithali-t-747336297/)* 🐙 [GitHub Profile](https://github.com/Mithali-123)
 
 ## 📄 License
 This project is licensed under the **MIT License**. See the `LICENSE` file for more details.
